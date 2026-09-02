@@ -1,0 +1,74 @@
+.maze-board {
+  position: relative;
+  margin: 0 auto;
+  background: var(--bg-alt);
+  box-shadow: inset 0 0 0 1px rgba(242, 234, 217, 0.06), 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+}
+
+.maze-board__grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.maze-board__cell {
+  border-color: var(--stone-light);
+  border-width: 3px;
+}
+
+.maze-board__goal,
+.maze-board__player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.maze-board__goal-icon {
+  width: 46%;
+  height: 46%;
+  color: var(--exit);
+  filter: drop-shadow(0 0 6px var(--exit-glow));
+  animation: goal-bob 2.4s ease-in-out infinite;
+}
+
+.maze-board__player {
+  transition: transform 110ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.maze-board__player-core {
+  width: 42%;
+  height: 42%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff2d6, var(--amber) 60%, var(--amber-dim) 100%);
+  box-shadow: 0 0 14px 3px var(--amber-glow);
+}
+
+.maze-board__player--won .maze-board__player-core {
+  animation: player-win-pulse 0.6s ease-out infinite;
+}
+
+@keyframes goal-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes player-win-pulse {
+  0% {
+    box-shadow: 0 0 10px 2px var(--amber-glow);
+  }
+  50% {
+    box-shadow: 0 0 22px 8px var(--amber-glow);
+  }
+  100% {
+    box-shadow: 0 0 10px 2px var(--amber-glow);
+  }
+}
