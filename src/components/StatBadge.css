@@ -1,0 +1,32 @@
+.stat-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 18px;
+  background: var(--bg-alt);
+  border: 1px solid rgba(242, 234, 217, 0.08);
+  border-left: 3px solid var(--amber-dim);
+  min-width: 96px;
+}
+
+.stat-badge--exit {
+  border-left-color: var(--exit);
+}
+
+.stat-badge--ember {
+  border-left-color: var(--ember);
+}
+
+.stat-badge__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+
+.stat-badge__value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+}
