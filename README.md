@@ -1,5 +1,7 @@
 # Maze Master
 
+Preview: https://mazemasterv2.netlify.app/
+
 A browser maze game built with React, React Router, and Vite. Each run generates a
 fresh perfect maze (recursive backtracker algorithm — every cell reachable by exactly
 one path), so no two chambers are the same.
